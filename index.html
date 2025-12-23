@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HERO.IO - App Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo" onclick="navigateTo('home')">
+                <img src="assets/logo.png" alt="HERO.IO Logo" class="logo-icon">
+                <div class="logo-text">HERO.IO</div>
+            </div>
+            <nav>
+                <button id="nav-home" class="active" onclick="navigateTo('home')">Home</button>
+                <button id="nav-apps" onclick="navigateTo('apps')">Apps</button>
+                <button id="nav-installation" onclick="navigateTo('installation')">Installation</button>
+            </nav>
+            <button class="contribute-btn">
+                <i class="fab fa-github"></i> Contribute
+            </button>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home-page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1>We Build<br><span class="purple-text">Productive</span> Apps</h1>
+                <p>At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting. Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
+                <div class="store-buttons">
+                    <button class="store-btn">
+                        <span>▶</span> Google Play
+                    </button>
+                    <button class="store-btn">
+                        <span>🍎</span> App Store
+                    </button>
+                </div>
+                <div class="phone-mockup">
+                    <img src="assets/hero.png" alt="App Preview" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <h2>Trusted By Millions, Built For You</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Downloads</h3>
+                        <div class="stat-number">29.6M</div>
+                        <p>21% More Than Last Month</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Reviews</h3>
+                        <div class="stat-number">906K</div>
+                        <p>46% More Than Last Month</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Apps</h3>
+                        <div class="stat-number">132+</div>
+                        <p>51 Were Will Launch</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Apps -->
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Trending Apps</h2>
+                    <p>Explore All Trending Apps on the Market developed by us</p>
+                </div>
+                <div class="app-grid" id="trending-apps"></div>
+                <button class="show-all-btn" onclick="navigateTo('apps')">Show All</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- All Apps Page -->
+    <div id="apps-page" class="hidden">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our All Applications</h2>
+                <p>Explore All Apps on the Market developed by us. We code for Millions</p>
+            </div>
+            <div class="search-container">
+                <div class="apps-count" id="apps-count">(0) Apps Found</div>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="search Apps">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div id="search-results">
+                <div class="app-grid" id="all-apps"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Installation Page -->
+    <div id="installation-page" class="hidden">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Installed Apps</h2>
+                <p>Explore All Trending Apps on the Market developed by us</p>
+            </div>
+            <div class="search-container">
+                <div class="apps-count" id="installed-count">0 Apps Found</div>
+                <select class="sort-select" id="sort-select" onchange="sortInstalledApps()">
+                    <option value="default">Sort By Size</option>
+                    <option value="high-low">High-Low</option>
+                    <option value="low-high">Low-High</option>
+                </select>
+            </div>
+            <div class="installation-list" id="installation-list"></div>
+        </div>
+    </div>
+
+    <!-- App Details Page -->
+    <div id="app-details-page" class="hidden">
+        <div class="container">
+            <button class="back-btn" onclick="navigateBack()">
+                <i class="fas fa-arrow-left"></i> Back to Apps
+            </button>
+            <div class="app-details" id="app-details-content"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="HERO.IO Logo" class="logo-icon">
+                <div class="logo-text">HERO.IO</div>
+            </div>
+            <div class="social-links">
+                <span>Social Links</span>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright © 2025 - All right reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
